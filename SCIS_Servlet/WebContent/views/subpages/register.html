@@ -1,0 +1,288 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Register</title>
+        <link rel="stylesheet" href="CSS/styles.css">
+        <script>
+            function isNumber(evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+                return true;
+            }
+            function goHome() {
+                var loc=window.location.href
+                location.href= loc.substring(0,loc.lastIndexOf("/")+1)+"home.html"
+            }
+
+
+        function validateName(){
+			var form = document.forms[0];
+			var currRow=form.firstName.parentNode.parentNode.rowIndex;
+            print("inside Validatename")
+            if(document.getElementByName("firstName").value==""){
+			    //alert("Please fill the First Name field");
+                form.firstName.classList.add("invalid");
+				updateTableRow(currRow+1,"Error in the name format")
+            }else{
+                var regex=RegExp('[^a-zA-Z ]+');
+                console.log(regex.test(form.firstName.value))
+                if(!regex.test(form.firstName.value)){
+                    form.firstName.classList.remove("invalid");
+                    form.firstName.classList.add("valid");
+                    document.getElementById("errorName").innerHTML="";
+					updateTableRow(currRow+1,"&nbsp;")
+                    
+                }else{
+                    form.firstName.classList.remove("valid");
+                    form.firstName.classList.add("invalid");
+					updateTableRow(currRow+1,"Error in the name format")
+   
+                }
+            }
+        }
+
+        function validatePassword(){
+			var form = document.forms[0];
+			var currRow=form.password.parentNode.parentNode.rowIndex;
+            print("inside Validatename")
+            if(form.firstName.value==""){
+			    //alert("Please fill the First Name field");
+                form.firstName.classList.add("invalid");
+				updateTableRow(currRow+1,"First Name field cannot be empty!")
+            }else{
+                var regex=RegExp('[^a-zA-Z ]+');
+                console.log(regex.test(form.firstName.value))
+                if(!regex.test(form.firstName.value)){
+                    form.firstName.classList.remove("invalid");
+                    form.firstName.classList.add("valid");
+                    document.getElementById("errorName").innerHTML="";
+					updateTableRow(currRow+1,"&nbsp;")
+                    
+                }else{
+                    form.firstName.classList.remove("valid");
+                    form.firstName.classList.add("invalid");
+					updateTableRow(currRow+1,"Error in the name format")
+   
+                }
+            }
+
+        }
+
+		function validatePhoneNumber(){
+			var form = document.forms[0];
+			var currRow=form.phoneNumber.parentNode.parentNode.rowIndex;
+            print("inside Validatename")
+            if(form.phoneNumber.value==""){
+                form.phoneNumber.classList.add("invalid");
+				updateTableRow(currRow+1,"Phone Number cannot be empty!")
+            }else if(form.phoneNumber.value.length!=10){
+				updateTableRow(currRow+1,"Length of Phone Number should be 10")
+
+			}else{
+				updateTableRow(currRow+1,"")
+			}
+        }
+
+
+
+
+        function validateEmailId(){
+			var form = document.forms[0];
+			var regex=RegExp("[^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$]");
+			var currRow=form.emailId.parentNode.parentNode.rowIndex;
+            print("inside Validatename")
+            if(form.emailId.value==""){
+				updateTableRow(currRow+1,"email-id cannot be empty!")
+            }else if(regex.test(form.emailId.value)){
+				updateTableRow(currRow+1,"Incorrect email-id format!")
+
+			}else{
+				updateTableRow(currRow+1,"")
+			}
+            
+        }
+        
+        function removeElement(elementId) {
+            // Removes an element from the document
+            var element = document.getElementById(elementId);
+            element.parentNode.removeChild(element);
+        }
+		
+		function removeTableRow(index){
+			document.getElementById("myTable").deleteRow(index);
+		}
+
+		function updateTableRow(index,text){
+			var table=document.getElementById("myTable");
+			var cell=table.rows[index].cells[1];
+			cell.innerHTML=text;
+			cell.classList.add("invalidText")
+		
+		}
+
+		
+        
+	
+
+        </script>
+    </head>
+    <body style="background-color:black;">
+        <div style="margin-left:22em;width:45%;height:98%;background-color: floralwhite;border-radius: 2em;">
+                <div style="position: absolute;margin-left: 2em;width:40%;">
+            <form name="registrationForm">
+                    <table id="myTable">
+                            <tr>
+                                <td style="text-align: right; width:30%">Name*</td>
+                                <td style="width:40%"><input  name="firstName" type="text" placeholder="Name" onblur="validateName();" required/></td>
+                            
+                            </tr>
+                            <tr id="firstNameNewRow"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td ></td><td id="errorName"></td></tr>
+                            <tr>
+                                <td style="text-align: right;">Date of Birth*</td>
+                                <td><!--<input  type="date" placeholder="Name" required/>-->
+                                    <select >
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                            <option>31</option>
+                                    </select>
+                                    <select >
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                    </select>
+                                    <select >
+                                            <option>1991</option>
+                                            <option>1992</option>
+                                            <option>1993</option>
+                                            <option>1994</option>
+                                            <option>1995</option>
+                                            <option>1996</option>
+                                            <option>1997</option>
+                                            <option>1998</option>
+                                            <option>1999</option>
+                                            <option>2000</option>
+                                            <option>2001</option>
+                                            <option>2002</option>
+                                            <option>2003</option>
+                                            <option>2004</option>
+                                            <option>2005</option>
+                                            <option>2006</option>
+                                            <option>2007</option>
+                                            <option>2008</option>
+                                            <option>2009</option>
+                                            <option>2010</option>
+                                            <option>2011</option>
+                                            <option>2012</option>
+                                            <option>2013</option>
+                                            <option>2014</option>
+                                            <option>2015</option>
+                                            <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                    </select>
+                                </td>
+
+                                
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <td style="text-align: right;"><input name="Gender" type="radio" >Male</td>
+                                <td><input name="Gender" type="radio">Female</td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <td style="text-align: right;">email-id</td>
+                                <td><input name="emailId" type="text" placeholder="abc@xyz.com" /></td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <td style="text-align: right;">Street 1</td>
+                                <td><input  type="text" placeholder="Street 1"/></td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <td style="text-align: right;">City</td>
+                                <td><input  type="text" placeholder="City" /></td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <td style="text-align: right;">State</td>
+                                <td><input  type="text" placeholder="State" /></td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <td style="text-align: right;">Pin Code</td>
+                                <td><input  type="text" placeholder="Pin Code" onkeypress="return isNumber(event)" maxlength="6" /></td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <td style="text-align: right;">Phone Number*</td>
+                                <td><input  type="text"name="phoneNumber" placeholder="Phone Number" onkeypress="return isNumber(event)" maxlength="10" onblur="validatePhoneNumber();" required/></td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <td style="text-align: right;">Aadhar Number*</td>
+                                <td><input  type="text" name="aadhar" placeholder="Aadhar Number" maxlength="12"  onkeypress="return isNumber(event)" required/></td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <td><button class="buttonStyle" type="button" onclick="goHome()">Submit</button></td>
+                                <td><button class="buttonStyle" type="reset" name="Login" >Reset</button></td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table><br/>
+            </form>
+        </div>
+
+
+
+
+        </div>
+
+
+
+
+    </body>
+</html>
