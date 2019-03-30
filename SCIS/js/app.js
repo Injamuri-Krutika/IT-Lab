@@ -5,6 +5,8 @@
         var router = new Router([
             new Route('home', 'home.html', true),
             new Route('login', 'login.html'),
+            new Route('register', 'register.html'),
+
             new Route('contact', 'contact.html'),
             new Route('placement', 'placements.html'),
             new Route('latestnews', 'subpages/activities/latestnews.html'),
@@ -14,6 +16,7 @@
             new Route('admissions', 'subpages/academics/admissions.html'),
             new Route('programs', 'subpages/academics/programs.html'),
             new Route('syllabus', 'subpages/academics/syllabus.html'),
+
 
         ]);
     }

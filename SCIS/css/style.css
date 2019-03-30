@@ -15,6 +15,7 @@ body {
 	font-family: 'Raleway', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+	background-color: #c4ffff
 }
 
 
@@ -1827,3 +1828,18 @@ ol {
   .list:hover{
 	color: #d82a4e;
   }
+
+  input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+th, td { 
+	padding: 5px;
+ }
+
+
+.invalidText{
+	color:red;
+
+}

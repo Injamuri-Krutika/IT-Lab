@@ -27,37 +27,3 @@
         </div>
     </div>
 </div>
-<!-- Hero section end -->
-
-<!--====== Javascripts & Jquery ======-->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/mixitup.min.js"></script>
-<script src="js/circle-progress.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
-<script>
-    console.log("Here");
-    console.log()
-
-    function loginClicked() {
-        var uname = document.getElementById("uname").value;
-        var pass = document.getElementById("pass").value;
-        if (uname === "Kru" && pass === "pass") {
-            var loc = window.location.href
-            var regloc = loc.substring(0, loc.lastIndexOf("/") + 1) + "home.html"
-            location.href = regloc;
-        }
-    }
-    function registerClicked() {
-        var loc = window.location.href
-        var regloc = loc.substring(0, loc.lastIndexOf("/") + 1) + "register.html"
-        location.href = regloc;
-    }
-
-
-
-
-</script>
-
-</html>
