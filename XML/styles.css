@@ -1,0 +1,25 @@
+UniversityList{
+    padding: 15px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+
+UniversityDetails {
+    display: block;
+    border:solid black 2px;
+    background-color: aquamarine;
+    color: purple;
+    padding: 15px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+City{
+    color: brown;
+}
+
+h1{
+    color: chocolate;
+    text-align: center;
+}
